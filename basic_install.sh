@@ -34,17 +34,16 @@ sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
 cd /var/www/
 chown -R www-data myiptv
 chgrp -R www-data myiptv
-
+##############################################################################
 # Apache
 sudo echo 'Configure the Apache WebServer'
-cd /etc/apache2/sites-available/
-sudo cp 000-default.conf 000-default.conf_bak
-cd /var/www/myiptv/install/000-default.conf /etc/apache2/sites-available/000-default.conf
+rm /etc/apache2/sites-available/000-default.conf
+cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/000-default.conf
+##############################################################################
 sudo a2enmod rewrite
 sudo service apache2 restart
-
+##############################################################################
 # Panel
-sudo echo 'Configure the Panel'
-cd /var/www/myiptv/config
-sudo cp config_template.php config.php
+rm /var/www/myiptv/config/config_template.php
+cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
 ##############################################################################
