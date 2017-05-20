@@ -18,7 +18,23 @@ sudo apt-get update
 ##############################################################################
 # Install packages
 sudo echo 'Install the packages'
-sudo apt-get install apache2 apache2-utils php5 php5-cli php5-sqlite git ffmpeg vlc 
+sudo apt-get install apache2 apache2-utils
+sudo apt-get install php5 php5-cli
+sudo a2enmod rewrite
+sudo apt-get install php5-sqlite
+sudo apt-get install git
+sudo apt-get install ffmpeg
+sudo apt-get install vlc
+sudo visudo
+##############################################################################
+#php5-FPM configuration
+sudo apt-get install libapache2-mod-fastcgi, php5-fpm apache2-mpm-worker
+a2dismod php5 mpm_prefork
+a2enmod mpm_worker
+a2enmod proxy
+a2enmod proxy_fcgi
+a2enmod actions
+apache2 -v
 ##############################################################################
 # Download Panel
 sudo echo 'Download the Panel'
@@ -40,13 +56,14 @@ sudo echo 'Configure the Apache WebServer'
 rm /etc/apache2/sites-available/000-default.conf
 cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/000-default.conf
 ##############################################################################
-sudo a2enmod rewrite
-sudo service apache2 restart
-##############################################################################
-# Panel
+# My IP : config_template.php , config.php
 rm /var/www/myiptv/config/config_template.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
 ##############################################################################
 rm /var/www/myiptv/config/config.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config.php
+##############################################################################
+# Restart Apache and php5-fpm
+sudo service apache2 restart
+sudo service php5-fpm restart
 ##############################################################################
