@@ -39,12 +39,6 @@ echo " "
 chown -R www-data myiptv
 chgrp -R www-data myiptv
 echo " "
-# Configurations
-sudo echo 'Configure the authorizations'
-sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
-sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
-sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
-echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
 sudo apt-get update
