@@ -34,8 +34,10 @@ echo " "
 #Download & Move app in apache folder
 ### Download Panel ###
 sudo echo 'Download the Panel'
-cd /var/www/html/
+cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
+echo " "
+cp -R /var/www/myiptv/  /var/www/html/
 echo " "
 #Allow WebUser to run vlc and cvlc
 ### Configurations ###
