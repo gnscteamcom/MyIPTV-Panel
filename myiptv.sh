@@ -37,6 +37,7 @@ sudo echo 'Download the Panel'
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
+sudo apt-get update
 cp -R /var/www/myiptv/  /var/www/html/
 echo " "
 #Allow WebUser to run vlc and cvlc
