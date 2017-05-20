@@ -39,5 +39,7 @@ echo " "
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
+wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
+echo " "
 sudo apt-get update
 service apache2 reload && service apache2 restart
