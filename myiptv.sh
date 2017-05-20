@@ -36,15 +36,8 @@ echo " "
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
-sudo apt-get update
-cp -R /var/www/myiptv/  /var/www/html/
-echo " "
 chown -R www-data myiptv
 chgrp -R www-data myiptv
-echo " "
-cd /etc/apache2/sites-available/
-sudo nano 000-default.conf
-echo " "
 # Configurations
 sudo echo 'Configure the authorizations'
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
@@ -64,6 +57,12 @@ a2enmod actions
 apache2 -v
 echo " "
 rm  /var/www/html/index.html
+echo " "
+rm /etc/apache2/sites-available/000-default.conf
+cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/000-default.conf
+echo " "
+rm /var/www/myiptv/config/config_template.php
+cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
 echo " "
 sudo apt-get update
 #Restart Apache and php5-fpm
