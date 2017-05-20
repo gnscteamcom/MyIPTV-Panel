@@ -47,9 +47,6 @@ sudo echo 'Configure the authorizations'
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
-cd /var/www/html/myiptv/
-chown -R www-data myiptv
-chgrp -R www-data myiptv
 echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
@@ -62,6 +59,8 @@ a2enmod proxy
 a2enmod proxy_fcgi
 a2enmod actions
 apache2 -v
+echo " "
+rm  /var/www/html/index.html
 echo " "
 sudo apt-get update
 #Restart Apache and php5-fpm
