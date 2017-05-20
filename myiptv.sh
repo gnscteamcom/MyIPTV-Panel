@@ -6,8 +6,6 @@ echo -e "${jeshile} └───────────────────
 echo " "
 apt-get update && apt-get upgrade -y && apt-get install htop -y
 echo " "
-
-
 #Install Apache
 apt-get install apache2 apache2-mpm-prefork apache2-utils libapache2-mod-php5 libapr1 libaprutil1 libdbd-mysql-perl libdbi-perl libnet-daemon-perl libplrpc-perl libpq5 mysql-client-5.5 mysql-common mysql-server mysql-server-5.5 php5-common php5-mysql -y
 apt-get install phpmyadmin -y
