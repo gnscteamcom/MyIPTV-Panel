@@ -55,6 +55,9 @@ echo " "
 rm /etc/apache2/sites-available/000-default.conf
 cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/000-default.conf
 echo " "
+rm /var/www/myiptv/config/config.php
+cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config.php
+echo " "
 rm /var/www/myiptv/config/config_template.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
 echo " "
