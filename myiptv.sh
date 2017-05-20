@@ -32,8 +32,7 @@ echo " "
 sudo apt-get update
 echo " "
 #Download & Move app in apache folder
-### Download Panel ###
-sudo echo 'Download the Panel'
+# Download Panel
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
@@ -41,8 +40,7 @@ sudo apt-get update
 cp -R /var/www/myiptv/  /var/www/html/
 echo " "
 #Allow WebUser to run vlc and cvlc
-### Configurations ###
-## Auth ##
+# Configurations
 sudo echo 'Configure the authorizations'
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
