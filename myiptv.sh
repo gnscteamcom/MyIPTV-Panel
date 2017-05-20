@@ -50,11 +50,6 @@ cd /var/www/html/myiptv/
 chown -R www-data myiptv
 chgrp -R www-data myiptv
 echo " "
-## Panel ##
-sudo echo 'Configure the Panel'
-cd /var/www/html/myiptv/config
-sudo cp config_template.php config.php
-echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
 sudo apt-get update
