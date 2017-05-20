@@ -38,6 +38,7 @@ git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
 chown -R www-data myiptv
 chgrp -R www-data myiptv
+echo " "
 # Configurations
 sudo echo 'Configure the authorizations'
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
