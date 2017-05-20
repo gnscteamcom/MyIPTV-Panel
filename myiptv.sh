@@ -26,24 +26,43 @@ sudo apt-get install ffmpeg
 #Install VLC
 sudo apt-get install vlc
 sudo apt-get update && sudo apt-get install vlc vlc-plugin-* -y && sudo apt-get install vlc browser-plugin-vlc -y
-#Allow WebUser to run vlc and cvlc
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
 echo " "
 sudo visudo
 echo " "
 sudo apt-get update
 echo " "
 #Download & Move app in apache folder
-cd /var/www/
+### Download Panel ###
+sudo echo 'Download the Panel'
+cd /var/www/html/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
 echo " "
+#Allow WebUser to run vlc and cvlc
+### Configurations ###
+## Auth ##
+sudo echo 'Configure the authorizations'
+sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
+sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
+sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
+cd /var/www/html/myiptv/
 chown -R www-data myiptv
 chgrp -R www-data myiptv
 echo " "
+## Panel ##
+sudo echo 'Configure the Panel'
+cd /var/www/html/myiptv/config
+sudo cp config_template.php config.php
+echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
+## Apache ##
+sudo echo 'Configure the Apache WebServer'
+cd /etc/apache2/sites-available/
+sudo cp 000-default.conf 000-default.conf_bak
+cd /var/www/html/myiptv/install/000-default.conf /etc/apache2/sites-available/000-default.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
+echo " 
 sudo apt-get update
 #php5-FPM configuration
 apt-get install libapache2-mod-fastcgi, php5-fpm apache2-mpm-worker
