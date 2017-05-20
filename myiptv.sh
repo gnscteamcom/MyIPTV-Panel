@@ -31,7 +31,6 @@ sudo visudo
 echo " "
 sudo apt-get update
 echo " "
-#Download & Move app in apache folder
 # Download Panel
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
