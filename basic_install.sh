@@ -46,4 +46,6 @@ sudo service apache2 restart
 # Panel
 rm /var/www/myiptv/config/config_template.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
+rm /var/www/myiptv/config/config.php
+cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config.php
 ##############################################################################
