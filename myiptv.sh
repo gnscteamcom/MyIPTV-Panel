@@ -57,14 +57,6 @@ sudo cp config_template.php config.php
 echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
-## Apache ##
-sudo echo 'Configure the Apache WebServer'
-cd /etc/apache2/sites-available/
-sudo cp 000-default.conf 000-default.conf_bak
-cd /var/www/html/myiptv/install/000-default.conf /etc/apache2/sites-available/000-default.conf
-sudo a2enmod rewrite
-sudo service apache2 restart
-echo " 
 sudo apt-get update
 #php5-FPM configuration
 apt-get install libapache2-mod-fastcgi, php5-fpm apache2-mpm-worker
