@@ -39,7 +39,12 @@ echo " "
 sudo apt-get update
 cp -R /var/www/myiptv/  /var/www/html/
 echo " "
-#Allow WebUser to run vlc and cvlc
+chown -R www-data myiptv
+chgrp -R www-data myiptv
+echo " "
+cd /etc/apache2/sites-available/
+sudo nano 000-default.conf
+echo " "
 # Configurations
 sudo echo 'Configure the authorizations'
 sudo echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
