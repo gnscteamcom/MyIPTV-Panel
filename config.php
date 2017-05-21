@@ -13,7 +13,7 @@ Config::set('default_language', 'en');					// Set the default language --> en
 Config::set('default_controller', 'pages');
 Config::set('default_action', 'index');					// Set the defaut action to open index.html/php
 //***********************************************************************************************************************************//
-Config::set('stream_svr_url', 'http://54.94.173.232');		// Set the panel url, should be replaced by your ddns --> 'http://ddns'
+Config::set('stream_svr_url', 'http://54.233.91.111');		// Set the panel url, should be replaced by your ddns --> 'http://ddns'
 Config::set('stream_svr_port', '80');					// Set the panel port, default http (used for server admin)
 Config::set('panel_chain', 'IPTV_PANEL');				// Set the IPTV Panel chain
 Config::set('stream_1st_port', '2000');					// Set the 1st port used for vlc restreaming
