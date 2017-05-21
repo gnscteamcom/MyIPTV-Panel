@@ -71,3 +71,4 @@ cd /etc/apache2/mods-enabled/ && wget http://raw.githubusercontent.com/marconimp
 sudo service apache2 restart
 sudo service php5-fpm restart
 ##############################################################################
+echo "<?php phpinfo(); ?>" > /var/www/myiptv/webroot/info.php
