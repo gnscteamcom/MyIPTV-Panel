@@ -17,3 +17,12 @@ wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/install.sh
 chmod 755 install.sh
 
 ./install.sh
+
+#
+wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/Upgrade_MyIPTVPanel.sh
+
+chmod 755 Upgrade_MyIPTVPanel.sh
+
+./Upgrade_MyIPTVPanel.sh
+
+#
