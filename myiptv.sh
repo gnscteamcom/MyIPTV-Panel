@@ -27,6 +27,10 @@ sudo apt-get install ffmpeg
 sudo apt-get install vlc
 sudo apt-get update && sudo apt-get install vlc vlc-plugin-* -y && sudo apt-get install vlc browser-plugin-vlc -y
 echo " "
+echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
+echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
+echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
+echo " "
 sudo visudo
 echo " "
 sudo apt-get update
@@ -40,28 +44,8 @@ chgrp -R www-data myiptv
 echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
-sudo apt-get update
-#php5-FPM configuration
-apt-get install libapache2-mod-fastcgi, php5-fpm apache2-mpm-worker
-a2dismod php5 mpm_prefork
-a2enmod mpm_worker
-a2enmod proxy
-a2enmod proxy_fcgi
-a2enmod actions
-apache2 -v
-echo " "
 rm  /var/www/html/index.html
 echo " "
-rm /etc/apache2/sites-available/000-default.conf
-cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/000-default.conf
-echo " "
-rm /var/www/myiptv/config/config.php
-cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config.php
-echo " "
-rm /var/www/myiptv/config/config_template.php
-cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
-echo " "
-sudo apt-get update
 #Restart Apache and php5-fpm
 service apache2 reload && service apache2 restart
 service php5-fpm restart
