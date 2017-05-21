@@ -70,7 +70,7 @@ cd /etc/apache2/mods-enabled/ && wget http://raw.githubusercontent.com/marconimp
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 ##############################################################################
 # Restart Apache and php5-fpm
-sudo service apache2 restart
-sudo service php5-fpm restart
+service apache2 reload && service apache2 restart
+service php5-fpm restart
 ##############################################################################
 echo "<?php phpinfo(); ?>" > /var/www/myiptv/webroot/info.php
