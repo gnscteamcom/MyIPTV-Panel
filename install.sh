@@ -60,6 +60,7 @@ cd /etc/apache2/sites-available/ && wget http://raw.githubusercontent.com/marcon
 rm /var/www/myiptv/config/config_template.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config_template.php
 ##############################################################################
+# My IP : config_template.php , config.php
 rm /var/www/myiptv/config/config.php
 cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/config.php
 ##############################################################################
