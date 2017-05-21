@@ -30,7 +30,6 @@ chown -R www-data myiptv
 chgrp -R www-data myiptv
 
 ## Apache ##
-sudo echo 'Configure the Apache WebServer'
 cp -R /var/www/myiptv/install/000-default.conf /etc/apache2/sites-available/000-default.conf
 sudo a2enmod rewrite
 sudo service apache2 restart
