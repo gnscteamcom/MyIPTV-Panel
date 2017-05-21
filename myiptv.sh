@@ -33,8 +33,6 @@ echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
 echo " "
 sudo visudo
 echo " "
-sudo apt-get update
-echo " "
 # Download Panel
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
