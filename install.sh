@@ -67,6 +67,8 @@ cd /var/www/myiptv/config/ && wget http://raw.githubusercontent.com/marconimp/My
 rm /etc/apache2/mods-enabled/fastcgi.conf
 cd /etc/apache2/mods-enabled/ && wget http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/fastcgi.conf
 ##############################################################################
+wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
+##############################################################################
 # Restart Apache and php5-fpm
 sudo service apache2 restart
 sudo service php5-fpm restart
