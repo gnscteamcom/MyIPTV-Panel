@@ -27,18 +27,9 @@ sudo apt-get install ffmpeg
 sudo apt-get install vlc
 sudo apt-get update && sudo apt-get install vlc vlc-plugin-* -y && sudo apt-get install vlc browser-plugin-vlc -y
 echo " "
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/vlc' >> /etc/sudoers
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/cvlc' >> /etc/sudoers
-echo 'www-data ALL=(ALL) NOPASSWD: /usr/bin/ffmpeg' >> /etc/sudoers
-echo " "
-sudo visudo
-echo " "
 # Download Panel
 cd /var/www/
 git clone https://cbazone@bitbucket.org/cbazone/myiptv.git
-echo " "
-chown -R www-data myiptv
-chgrp -R www-data myiptv
 echo " "
 wget -O /etc/apache2/apache2.conf http://raw.githubusercontent.com/marconimp/MyIPTV-Panel/master/apache2.conf
 echo " "
